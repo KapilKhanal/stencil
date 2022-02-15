@@ -2,15 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { withStyles } from "@material-ui/core/styles";
+//import { createTheme } from "@material-ui/core/styles";
 
 import { CardContent, Typography, Grid, Paper, Tabs, Tab, Radio} from "@material-ui/core";
 
 import IGVBrowser from "../SubComponents/IGVbrowser";
-import BasicTable from "../Tables/BasicTable_stencil";
-import LinePlot from "../Charts/LinePlot_stencil";
-import BarChart from "../Charts/BarChart_stencil";
-import ScatterPlot from "../Charts/ScatterPlot_stencil";
-import HeatMap from "../Charts/Heatmap_stencil";
+
+import SwarmPlot from "../Charts/Swarmplot_stencil";
 
 const styles = {
   card: {
@@ -83,72 +81,28 @@ class ImageArray extends React.Component {
               <IGVBrowser trackData={item.preLoadData.trackData} trackOptions={item.preLoadData.trackOptions} width={sizes[0]} height={sizes[1]} />
               </Grid>)
           ;
-        case "basictable":
+          case "swarmplot":
           //console.log(item);
           //console.log(item.preLoadData);
-          //console.log(item.preLoadData.tableData);
-          return (sizes===undefined)?(
-            <Grid item key={stepId}>
-              <BasicTable tableData={item.preLoadData.tableData} width={500} height={800}/>
-              </Grid>):(
-            <Grid item key={stepId}>
-              <BasicTable tableData={item.preLoadData.tableData} width={sizes[0]} height={sizes[1]} />
-              </Grid>)
-          ;
-        case "lineplot":
-          //console.log(item);
-          //console.log(item.preLoadData);
+         // console.log(item.preLoadData.chartOptions);
           return (sizes===undefined)?(<Grid item key={stepId}>
-            <LinePlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={600} height={500} />
+            <SwarmPlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={600} height={500} />
             </Grid>):(
             <Grid item key={stepId}>
-            <LinePlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={sizes[0]} height={sizes[1]} />
+            <SwarmPlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={sizes[0]} height={sizes[1]} />
             </Grid>
           );
-        case "barchart":
-          //console.log(item);
-          //console.log(item.preLoadData);
-          //console.log(item.preLoadData.chartOptions);
-          return (sizes===undefined)?(<Grid item key={stepId}>
-            <BarChart chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={600} height={500} />
-            </Grid>):(
-            <Grid item key={stepId}>
-            <BarChart chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={sizes[0]} height={sizes[1]} />
-            </Grid>
-          );
-        case "scatterplot":
-          //console.log(item);
-          //console.log(item.preLoadData);
-          //console.log(item.preLoadData.chartOptions);
-          return (sizes===undefined)?(
-            <Grid item key={stepId}>
-            <ScatterPlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={600} height={500} />
-            </Grid>):(
-            <Grid item key={stepId}>
-            <ScatterPlot chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={sizes[0]} height={sizes[1]} />
-            </Grid>
-          );
-        case "heatmap":
-          //console.log(item);
-          //console.log(item.preLoadData);
-          //console.log(item.preLoadData.chartOptions);
-          return (sizes===undefined)?(
-            <Grid item key={stepId}>
-            <HeatMap chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={600} height={500} />
-            </Grid>):(
-            <Grid item key={stepId}>
-            <HeatMap chartData={item.preLoadData?item.preLoadData.chartData: {}} chartOptions={item.preLoadData?item.preLoadData.chartOptions: {}} width={sizes[0]} height={sizes[1]} />
-            </Grid>
-          );
+        
         default:
         return(
           <Grid item>
-            dataType not known: {item.dataType}
+           Defaulted on Imagearray file: {item.dataType}
           </Grid>
         )
       };
     }
   }
+  //
   // end of show plot function
 
   RadioGroup = (props) => {

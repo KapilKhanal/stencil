@@ -298,15 +298,10 @@ exports.queryLibraryDataById = async (req, res, next) => {
       if ((doc!==null) && (doc.libraryData!==undefined)){
               doc.libraryData.forEach(item => {
                 //console.log(item);
-                switch (item.get("dataType").toLowerCase()) {
-                  case "lineplot":
-                  case "barchart":
-                  case "scatterplot":
-                  case "heatmap":
-                  case "basictable":
+                switch (item.get("dataType").toLowerCase()) {  
                   case "igvtrack":
                     var originalURL = item.get("URL");
-                    //console.log(originalURL);
+                    console.log(originalURL);
                     getList.push(axios.get(originalURL));
                     URLList.push(originalURL);
                 }

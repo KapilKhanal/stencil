@@ -1,0 +1,20 @@
+{
+	"projectId": "CORNELL Analysis",
+	"libraryType": "CORNELL-seq",
+	"sampleId": "CORNELL",
+	"libraryId": "Cornell Analysis",
+	"libraryDescription": "DESeq2 analysis",
+	"token": "SGAN9WTPAUCAYDO8A8HD",
+	"submitter": "kk733@cornell.edu",
+	"libraryData": [
+		{
+			"id": "swarmn",
+			"dataType": "swarmplot",
+			"layoutId": "SingleChart",
+			"layoutTitle": "Cornell Network Plot",
+			"tabId": "networkplot",
+			"URL": "http://localhost:8081/localdata/CORNELL/cornell_swarmplot.json",
+			"stepId": "0"
+		}
+	]
+}

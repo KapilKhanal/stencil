@@ -98,7 +98,7 @@ export default function FullScreenDialog(props) {
         {/* Expanded Chart */}
         <div className={classes.card}>
           <CardContent className={classes.chartContainer}>
-            <ResponsiveScatterPlotCanvas
+            <ResponsiveSwarmPlotCanvas
               data={plotData}
               {...plotOptions}
               colors={plotColor}

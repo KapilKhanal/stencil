@@ -1,4 +1,4 @@
-{
+]{
 	"projectId": "ENCODE Analysis",
 	"libraryType": "ATAC-seq",
 	"sampleId": "ATAC",
@@ -31,6 +31,7 @@
 			"layoutId": "SingleChart_2",
 			"layoutTitle": "DESeq2 Barchart",
 			"tabId": "Barchart",
+			
 			"URL": "http://localhost:8081/localdata/ENCODE/AS/DESeq2_pVal_barchart.json",
 			"stepId": "0"
 		},
