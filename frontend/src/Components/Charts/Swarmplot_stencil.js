@@ -34,7 +34,10 @@ function SwarmPlot_stencil(props) {
 
   // Load individual colors into array if exists
   let plotColor = [];
-  props.chartData.forEach(item => {
+  console.log("PROPS NULL?")
+  console.log(props)
+  console.log(props.chartOptions)
+  props.chartData.forEach((item) => {
     if(item.data[0].color !== undefined) {
       plotColor.push(item.data[0].color);
     }

@@ -8,11 +8,11 @@
 	"submitter": "kk733@cornell.edu",
 	"libraryData": [
 		{
-			"id": "swarmn",
+			"id": "swarm",
 			"dataType": "swarmplot",
 			"layoutId": "SingleChart",
-			"layoutTitle": "Cornell Network Plot",
-			"tabId": "networkplot",
+			"layoutTitle": "Cornell swarm Plot",
+			"tabId": "swarmplot",
 			"URL": "http://localhost:8081/localdata/CORNELL/cornell_swarmplot.json",
 			"stepId": "0"
 		}
