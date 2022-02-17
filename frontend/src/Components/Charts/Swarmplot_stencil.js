@@ -6,7 +6,7 @@ import { CardContent, Grid, Tooltip, IconButton} from "@material-ui/core";
 import ImportIcon from "@material-ui/icons/GetApp";
 import { makeStyles } from '@material-ui/core/styles';
 // Nivo chart
-import { ResponsiveSwarmPlot, SwarmPlot } from "@nivo/swarmplot";
+import { ResponsiveSwarmPlot, SwarmPlotDefaultProps } from "@nivo/swarmplot";
 // Chart expansion
 import FullScreenDialog from "./FullScreenSwarmPlot";
 
@@ -26,6 +26,8 @@ const useStyles = makeStyles({
 });
 
 function SwarmPlot_stencil(props) {
+
+  console.log("PROPS at the Beginning")
   const  classes  = useStyles(props);
 
   if (props.chartData === undefined ){
@@ -162,13 +164,13 @@ function SwarmPlot_stencil(props) {
       motionStiffness: 90,
       motionDamping: 15
   };
-  //console.log(plotOptions);
+  console.log("AFTER CHAARTOPTIONS");
 
   // Function to export the plot as svg
   let svgString = "";
   const handleExport = () => {
     svgString = ReactDOMServer.renderToStaticMarkup(
-      React.createElement(SwarmPlot, {
+      React.createElement(ResponsiveSwarmPlot, {
         animate: false,
         isInteractive: false,
         renderWrapper: false,
